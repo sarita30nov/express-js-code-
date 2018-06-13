@@ -1,0 +1,229 @@
+<%- include ./../layouts/header.ejs %>  
+
+<div class="container">
+        
+    <!-- registraion start  -->
+    <section class="registration">
+    <section class="container bg-gray">
+        <section class="registration-container">
+            <header class="text-center"><h4 class="main-heading-center">You Are Teacher</h4></header>
+            <hr class="gray-line" />
+            <header class="text-center"><h4 class="main-heading-center">Great to See You Here!</h4></header>
+            <ul class="nav nav-tabs" id="reg-myTab">
+                <li class="col-sm-4 col-xs-12"><a data-target="#home" data-toggle="tab11" class="btn-fb" ria-expanded="false"></a></li>
+                <li class="col-sm-4 col-xs-12"><a data-target="#profile" data-toggle="tab" class="btn-google" ria-expanded="false"></a></li>
+                <li class="col-sm-4 col-xs-12 active"><a data-target="#messages" data-toggle="tab" class="btn-mail" aria-expanded="true"></a></li>
+            </ul>
+            <div class="tab-content">
+				<div class="tab-pane" id="home">Home</div>
+				<div class="tab-pane" id="profile">Profile</div>
+                <div class="tab-pane active" id="messages">
+				 <form method="post" action="/register/teacher"  method="post" >
+					<section class="col-md-3 col-sm-4 col-xs-12">
+						<input type="file" name="photo" id="ContentPlaceHolder1_upload" class="form-control" onchange="img_pathUrl(this);" style="display:none" />
+						<a href="javascript:void(0)" id="upload_link" style="text-decoration:none">
+						<div class="icon-profiledp glyphicon glyphicon-user">
+						<img id="ContentPlaceHolder1_imgProfile" class="TutorProfilepic" src="/images/BlankAdmin.png" /></div></a>
+                    </section>
+					
+                    <section class="col-md-9 col-sm-8 col-xs-12">
+                        <header><h2 class="col-sm-12 main-heading-sub first">Personal Information</h2></header>
+                          <ul class="col-xs-12 list-unstyled nopadding">
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box">
+							  <input class="input-full" type="text" name="first_name" placeholder="First Name" required />
+							  </p></li>
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box">
+							  <input class="input-full" type="text" name="last_name" value="" placeholder="Last Name" />
+							  </p></li>
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box"> 
+							  <input class="input-full" type="text" name="screen_name" value="" placeholder="Screen Name" />
+							  </p></li>
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box gender"> 
+							  <label name="gender">Gender</label><input type="radio" name="gender" value="male" required   checked="checked">Male &nbsp;&nbsp; <input type="radio" name="gender" value="female" required >Female
+							  </p></li>
+                              <br class="clear" />
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box">
+							  <input class="input-full datepicker" type="text" readonly name="dob"  required  placeholder="Date Of Birth"/>
+							  </p></li>
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box">
+							  <select name="course_id" required >
+									<option value="">Select Course</option>
+									<% course.forEach(function(cour) { %>
+									<option value="<%= cour._id %>"><%= cour.course_name %></option>
+									<% }); %>
+							  </select>
+							  
+							  </p></li>
+                          </ul>
+                          <br class="clear" />
+                          <header><h2 class="col-sm-12 main-heading-sub">Contact Information</h2></header>
+
+                          <ul class="col-xs-12 list-unstyled nopadding">
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box">
+							  <input class="input-full" type="text" name="street" value="" placeholder="Street" required />
+							  </p></li>
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box">
+							  <input class="input-full" type="text" name="city_name" value="" placeholder="City" required  />
+							  </p></li>
+                              <br class="clear" />
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box">
+                                   <select name="country_id" required   >
+                                      <option value="">Select Country</option>
+										<% country.forEach(function(cnt) { %>
+										<option value="<%= cnt._id %>"><%= cnt.country_name %></option>
+										<% }); %>
+                                  </select>
+                              </p></li>
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box">  
+							  <input class="input-full" type="text" name="zip_code" value="" placeholder="Zip Code" required  />  
+							  </p></li>
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box">
+							  <input class="input-full" type="text" name="contact_number" value="" placeholder="Contact No." required  onkeypress="return isNumberKey(event)" maxlength="15" />
+							  </p></li>
+                          </ul>
+                          <br class="clear" />
+
+                          <header><h2 class="col-sm-12 main-heading-sub">Login Information</h2></header>
+                          
+                    
+                          <ul class="col-xs-12 list-unstyled nopadding">
+                          <div id="ContentPlaceHolder1_upRefresh">
+	
+                              <li class="col-md-6 col-sm-12 col-xs-12"></li>
+                              <br class="clear" />
+                              
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box">
+							  <input class="input-full email" type="email"  name="email"  placeholder="Email" required  autocomplete="off" />
+							  <span class="email_error" style="color:red"></span>
+							  </p></li>
+                              
+							</div>
+                              <li class="col-md-6 col-sm-12 col-xs-12">
+								  <p class="form-white-box"> 
+									  <input class="input-full user_name" type="text" name="user_name"  placeholder="User Name" required  autocomplete="off"/>
+									  <span class="user_name_error" style="color:red"></span>
+								  </p>
+							  </li>
+							  <br class="clear" />
+							  <br class="clear" />
+							  
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box"> 
+							  <input class="input-full password" type="password" name="password" value=""  placeholder="Password" required  autocomplete="off"/>
+							  </p></li>
+                              <li class="col-md-6 col-sm-12 col-xs-12"><p class="form-white-box">
+							  <input class="input-full confirm_password" type="password" name="confirm_password" value="" placeholder="Confirm Password" required  autocomplete="off" />
+								 <span class="confirm_password_error" style="color:red"></span>
+								 </p></li>
+                             
+
+    
+                              <br class="clear" />
+                              <li class="col-md-6 col-sm-12 col-xs-12">
+							  <label><input required type="checkbox" checked="checked" aria-invalid="true" class="user-error" aria-describedby="errorbox-3" name="agree_terms"  value="1"><a href="/terms" target="_blank">Accept terms &amp; Conditions</a> </label>
+							  </li>
+                              <li class="col-sm-7 col-xs-12"><input type="submit" value="SUBMIT" class="org-btn" /></li>
+                              <br class="clear" />
+                              <li class="col-sm-7 col-xs-12 text-center">Allready Account ? <a href="/login" class="org-link">Login now</a></li>
+                          </ul>
+                          
+                    </section>
+                </div>
+            </div>
+        </section>
+        
+    </section>
+</section>
+</div>
+
+
+<script type="text/javascript">
+$(".confirm_password").change(function() 
+{
+	$(".confirm_password_error").html('');
+	if( $(".confirm_password").val() !=  $(".password").val()  )
+	{
+		$(".confirm_password_error").html('Password do not match ');
+		$(".confirm_password").val('');
+		$(".password").val('');
+	}
+	
+});
+
+$(".user_name").change(function() {
+	$(".user_name_error").html('');
+	var user_name = $(".user_name").val();
+	
+	$.ajax({ 
+    type: 'POST', 
+    url: '/register/usernamecheck', 
+    data: { user_name: user_name }, 
+    dataType: 'json',
+    success: function (data) 
+	{
+		if(data.status == false)
+		{
+			$(".user_name_error").html(data.data);
+			$(".user_name").val('');
+		}
+    }
+});
+});
+
+$(".email").change(function() {
+	$(".email_error").html('');
+	var email = $(".email").val();
+	if( !isEmail(email)  )
+	{
+		$(".email_error").html('Please enter valid email');
+		$(".email").val('');
+		return false;
+	}
+	
+	$.ajax({ 
+    type: 'POST', 
+    url: '/register/emailcheck', 
+    data: { email: email }, 
+    dataType: 'json',
+    success: function (data) {
+		if(data.status == false)
+		{
+			$(".email_error").html(data.data);
+			$(".email").val('');
+		}
+    }
+});
+});
+
+function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode != 46 &&(charCode < 48 || charCode > 57)))
+        return false;
+    return true;
+}
+
+$("#upload_link").click(function () {
+	$("#ContentPlaceHolder1_upload").click();
+})
+
+function img_pathUrl(input) 
+{
+	$('#ContentPlaceHolder1_imgProfile')[0].src = (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);
+}
+
+$( function() {
+	$( ".datepicker" ).datepicker(
+	{
+		maxDate: -3650,
+	});
+} );
+</script>
+
+
+
+    <!-- registraion end  -->
+<%- include ./../layouts/footer.ejs %>

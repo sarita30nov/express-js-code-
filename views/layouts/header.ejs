@@ -1,0 +1,9 @@
+<% if(user==undefined){ %>
+		<%- include ./header_common.ejs %>
+<% }else if(user.user_type=='teacher'){ %>
+		<%- include ./header_logged.ejs %>
+<% }else if(user.user_type=='student'){ %>
+		<%- include ./header_logged.ejs %>
+<% }else{ %>
+		<%- include ./header_common.ejs %>
+<% } %>

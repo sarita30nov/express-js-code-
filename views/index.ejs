@@ -1,0 +1,287 @@
+<%- include layouts/header.ejs %> 
+    <section class="banner text-center">
+        <style>
+            .jssorl-009-spin img {
+                animation-name: jssorl-009-spin;
+                animation-duration: 1.6s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+
+            @keyframes jssorl-009-spin {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+
+        <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto; width: 1140px; height: 442px; overflow: hidden;">
+            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 1140px; height: 442px;overflow: hidden;">
+                <div>
+                    <img data-u="image" src="./images/gallery/980x380/001.jpg" />
+                </div>
+                <div>
+                    <img data-u="image" src="./images/gallery/980x380/002.jpg" />
+                </div>
+                <div>
+                    <img data-u="image" src="./images/gallery/980x380/003.jpg" />
+                </div>
+                <div>
+                    <img data-u="image" src="./images/gallery/980x380/004.jpg" />
+                </div>
+            </div>
+			
+            <style>
+                .jssorb031 {position:absolute;}
+                .jssorb031 .i {position:absolute;cursor:pointer;}
+                .jssorb031 .i .b {fill:#000;fill-opacity:0.5;stroke:#fff;stroke-width:1200;stroke-miterlimit:10;stroke-opacity:0.3;}
+                .jssorb031 .i:hover .b {fill:#fff;fill-opacity:.7;stroke:#000;stroke-opacity:.5;}
+                .jssorb031 .iav .b {fill:#fff;stroke:#000;fill-opacity:1;}
+                .jssorb031 .i.idn {opacity:.3;}
+            </style>
+            <div data-u="navigator" class="jssorb031" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                    <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                    </svg>
+                </div>
+            </div>
+            <style>
+                .jssora051 {display:block;position:absolute;cursor:pointer;}
+                .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+                .jssora051:hover {opacity:.8;}
+                .jssora051.jssora051dn {opacity:.5;}
+                .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+            </style>
+            <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                </svg>
+            </div>
+            <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                </svg>
+            </div>
+        </div>
+   </section>
+
+
+<script src="/js/jssor.slider.min.js"  type="text/javascript"  ></script>
+
+<script>
+
+        jQuery(document).ready(function ($) {
+            var options = {
+                $AutoPlay: 1,                                       //[Optional] Auto play or not, to enable slideshow, this option must be set to greater than 0. Default value is 0. 0: no auto play, 1: continuously, 2: stop at last slide, 4: stop on click, 8: stop on user navigation (by arrow/bullet/thumbnail/drag/arrow key navigation)
+                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $Idle: 2000,                                        //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: 1,   			                //[Optional] Steps to go for each navigation request by pressing arrow key, default value is 1.
+                $SlideEasing: $Jease$.$OutQuint,                    //[Optional] Specifies easing for right to left animation, default value is $Jease$.$OutQuad
+                $SlideDuration: 800,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide, default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
+
+                $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                },
+
+                $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $SpacingX: 12,                                  //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth) {
+                    jssor_slider1.$ScaleWidth(parentWidth - 30);
+                }
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+</script>  
+<!-- banner crousel start 
+<section class="banner text-center">
+    <img src="images/banner01.jpg" alt="" class="img-responsive" />
+</section>
+banner crousel end -->
+
+
+<!-- Featured Tutors Start -->
+<section class="Featured-Tutors">
+    <section class="container">
+        <div class="row">
+
+        <section class="featued-tutors-containter" id='carousel_container'>
+            <header><h2 class="col-sm-12 main-heading">Featured Tutors</h2></header>
+            <br class="clearfix">
+            <a href='javascript:slide("left");' class="glyphicon glyphicon-menu-left button-tutors prev" id='left_scroll'>&nbsp;</a>
+            <a href='javascript:slide("right");' class="glyphicon glyphicon-menu-right button-tutors next" id='right_scroll'>&nbsp;</a>
+          <ul class="nopadding nomargin" id='carousel_ul'>
+              <li><a href="javascript:void(0)"><img src="images/tutors01.jpg"  /><p><b>Jenny Abrahm</b> Instructor / London University</p></a></li>
+              <li><a href="javascript:void(0)"><img src="images/tutors02.jpg"  /><p><b>Jenny Abrahm</b> Instructor / London University</p></a></li>
+              <li><a href="javascript:void(0)"><img src="images/tutors03.jpg"  /><p><b>Jenny Abrahm</b> Instructor / London University</p></a></li>
+              <li><a href="javascript:void(0)"><img src="images/tutors04.jpg"  /><p><b>Jenny Abrahm</b> Instructor / London University</p></a></li>
+              <li><a href="javascript:void(0)"><img src="images/tutors05.jpg"  /><p><b>Jenny Abrahm</b> Instructor / London University</p></a></li>
+
+              <li><a href="javascript:void(0)"><img src="images/tutors01.jpg"  /><p><b>Jenny Abrahm</b> Instructor / London University</p></a></li>
+              <li><a href="javascript:void(0)"><img src="images/tutors02.jpg"  /><p><b>Jenny Abrahm</b> Instructor / London University</p></a></li>
+              <li><a href="javascript:void(0)"><img src="images/tutors03.jpg"  /><p><b>Jenny Abrahm</b> Instructor / London University</p></a></li>
+              <li><a href="javascript:void(0)"><img src="images/tutors04.jpg"  /><p><b>Jenny Abrahm</b> Instructor / London University</p></a></li>
+              <li><a href="javascript:void(0)"><img src="images/tutors05.jpg"  /><p><b>Jenny Abrahm</b> Instructor / London University</p></a></li>
+          </ul>
+            <input type='hidden' id='hidden_auto_slide_seconds' value=0 />
+        </section>
+        </div>
+    </section>
+</section>
+<!-- Featured Tutors End -->
+
+<!-- Solution Library Start -->
+<section class="colorbg">
+    <section class="container">
+        <div class="row">
+            <section class="col-md-5 col-sm-6 solution-library">
+                <header><h2 class="col-sm-12 main-heading">Solution Library</h2></header>
+                <div class="clear"></div>
+                <ol>
+                    <li>
+                        <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore</p>
+                    </li>
+                    <li>
+                        <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore</p>
+                    </li>
+                    <li>
+                        <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore</p>
+                    </li>
+
+                </ol>
+                <a href="javascript:void(0)" class="view-more pull-left">View More <i class="glyphicon glyphicon-menu-right"></i></a>
+            </section>
+
+            <section class="col-md-5 col-sm-6 col-md-offset-2 public-forum">
+                <header><h2 class="col-sm-12 main-heading">Public Forum</h2></header>
+                <div class="clear"></div>
+                <ul>
+                    <li>
+                        <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+                        <p>Posted By. Tena, 04 May</p>
+                    </li>
+                    <li>
+                        <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+                        <p>Posted By. Tena, 04 May</p>
+                    </li>
+                    <li>
+                        <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+                        <p>Posted By. Tena, 04 May</p>
+                    </li>
+                    <li>
+                        <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+                        <p>Posted By. Tena, 04 May</p>
+                    </li>
+
+                </ul>
+                <a href="javascript:void(0)" class="view-more pull-left">View More <i class="glyphicon glyphicon-menu-right"></i></a>
+            </section>
+        </div>
+    </section>
+</section>
+<!-- Solution Library End -->
+
+<!-- Client Testimonials Start -->
+<section class="client-testimonial">
+    <section class="container">
+        <header><h2 class="col-sm-12 main-heading">Client Says</h2></header>
+        <div class="client-testimonial-container col-sm-12 text-center">
+        <div id="client-testimonials01" class="testimonials-text">
+            <p>Aliquam enim enim, pharetra in sodales at, interdum sit amet dui. Nullam vulputate euismod urna non pharetra Aliquam enim enim.</p>
+            <b>-- <span class="why-clients-say-user">John Doe</span></b>
+        </div>
+        <div id="client-testimonials02" class="testimonials-text">
+            <p>As we know that mobile applications functioning on platforms such as iOS, Android and Windows Phone are gaining enormous popularity throughout the globe as an viable option to interact with digital media, they are of great importance in the present world to increase revenue, expand networking, and control systems.</p>
+            <b>--<span class="why-clients-say-user">Devid Hue</span></b>
+        </div>
+        <div id="client-testimonials03" class="testimonials-text">
+            <p>asfdasdf asdf asd f asdf</p>
+            <b>--<span class="why-clients-say-user">Mark Petty</span></b>
+        </div>
+        </div>
+    </section>
+</section>
+<!-- Client Testimonials End -->
+<!-- Client Testimonials End -->
+<section class="footer-top" ng-app='subscribe'>
+	  <form ng-submit="submit_form()" ng-controller="newsletterController">
+	   <section class="container" >
+            <div class="col-md-7 col-sm-6 newsletter">
+                <label for="newsletter">Newsletter</label>
+                <input type="email" name="email" placeholder="Enter your email ID" ng-model="Subdata.email" autocomplete="on" required />
+                <input type="submit" value="Subscribe" />
+				<div class="subscribe_msg">{{message}} </div>
+            </div>
+            <button class="btn-become-tutor" type="Submit"></button>
+        </section>
+	</form>	
+</section>
+<script>
+var app = angular.module('subscribe', []);
+app.controller('newsletterController', function ($scope, $http, $timeout) {
+	$scope.submit_form = function()
+	{
+		$http({
+				url: "/subscribe",
+				method: "POST",
+				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+				data: $.param($scope.Subdata)
+			}).then(function (response){
+				if(response.data.status==false )
+				{
+					$scope.message = response.data.data;
+					$(".subscribe_msg").css('color','#AE7772');
+				}
+				else if(response.data.status==true )
+				{
+					$scope.message = response.data.data;
+					$(".subscribe_msg").css('color','green');
+				}
+				$scope.Subdata.email = '';
+				$timeout(function () { $scope.message = '';}, 4000);
+			});
+	}
+});
+</script>
+
+
+
+<%- include layouts/footer.ejs %>

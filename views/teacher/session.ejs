@@ -1,0 +1,251 @@
+<%- include ./../layouts/header.ejs %>
+
+<!-- inner-submenu-container start -->
+<section class="inner-submenu-full-container hidden-xs">
+    <section class="container">
+
+        <ul class="nav navbar-nav inner-submenu">
+            <li class ="active"><a href="/teacher/session">Session</a></li>
+            <li><a href="javascript:void(0)">Calendar</a></li>
+            <li><a href="javascript:void(0)">My Orders</a></li>
+            <li><a href="javascript:void(0)">My Payments</a></li>
+            <li><a href="javascript:void(0)">My Watchlist</a></li>
+        </ul>
+    </section>
+</section>
+<!-- inner-submenu-container end -->
+
+<!-- registraion start  -->
+<section class="profile-container">
+    <section class="container">
+        <section class="col-md-3 col-sm-4">
+            <section class="profile-deails">
+                <div class="col-xs-12">
+                    <ul>
+                        <li class="text-right"><a href="javascript:void(0)" class="glyphicon glyphicon-pencil org-link"></a></li>
+                        <li class="text-center user-name"><strong><%= user.first_name %> <%= user.last_name %></strong></li>
+                        <li class="text-center">Delhi University</li>
+                        <li class="text-center"><div class="profile-img"><img src="/images/profile-img.jpg" alt="" /></div></li>
+                        <li class="org-link"><span class="glyphicon glyphicon-envelope pull-left"></span> <%= user.email %></li>
+                        <li><span class="glyphicon glyphicon-phone pull-left"></span> <%= user.contact_number %></li>
+                        <li><span class="glyphicon glyphicon-gift pull-left"></span> 23 yrs</li>
+                        <li><span class="glyphicon glyphicon-time pull-left"></span> UTC+02:00</li>
+                        <li><span class="glyphicon glyphicon-home pull-left"></span> <p><%= user.street %>, <%= user.city_name %>, <%= country.country_name %>, 2021</p></li>
+                    </ul>
+                    <div class="clear">&nbsp;</div>
+                </div>
+                <div class="clear">&nbsp;</div>
+            </section>
+        </section>
+        <section class="col-md-9 col-sm-8">
+            <header><h2 class="col-sm-12 main-heading-sub-plus">Upcoming Session</h2></header>
+            <div class="col-xs-12">
+                <div class="col-sm-4 col-md-4 tuter-details-box text-center first">
+                    <h6>Discovery Of Earth</h6>
+                    <div class="tuter-details-time"><strong>9:30 AM</strong> <br />20/05/2016</div>
+                    <div class="tuter-details-price"><strong>Price:</strong> <span class="org-link">$25</span></div>
+                    <div class="text-center">
+                        <span class="tuter-details-dp"><img src="/images/tuter01-img-mid.jpg" alt="" /></span>
+                        <p>By: <span class="tuter-name">Jemini Moris</span></p>
+                    </div>
+                    <div class="tuter-stars text-center">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <br class="clear" />
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="tuter-details-box-hover">
+                        <button type="submit" class="btn btn-default">View More</button>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 tuter-details-box text-center">
+                    <h6>Physics</h6>
+                    <div class="tuter-details-time"><strong>12:30 AM</strong> <br />20/05/2016</div>
+                    <div class="tuter-details-price"><strong>Price:</strong> <span class="org-link">$25</span></div>
+                    <div class="text-center">
+                        <span class="tuter-details-dp"><img src="/images/tuter02-img-mid.jpg" alt="" /></span>
+                        <p>By: <span class="tuter-name">Jemini Moris</span></p>
+                    </div>
+                    <div class="tuter-stars text-center">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <br class="clear" />
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="tuter-details-box-hover">
+                        <button type="submit" class="btn btn-default">View More</button>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 tuter-details-box text-center">
+                    <h6>Botny (Plant)</h6>
+                    <div class="tuter-details-time"><strong>9:30 AM</strong> <br />20/05/2016</div>
+                    <div class="tuter-details-price"><strong>Price:</strong> <span class="org-link">$25</span></div>
+                    <div class="text-center">
+                        <span class="tuter-details-dp"><img src="/images/tuter03-img-mid.jpg" alt="" /></span>
+                        <p>By: <span class="tuter-name">Martin Devid</span></p>
+                    </div>
+                    <div class="tuter-stars text-center">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <br class="clear" />
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="tuter-details-box-hover">
+                        <button type="submit" class="btn btn-default">View More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">&nbsp;</div>
+            <header><h2 class="col-sm-12 col-sm-12 main-heading">Previous session </h2></header>
+            <div class="col-xs-12">
+                <div class="col-sm-4 col-md-4 tuter-details-box text-center first">
+                    <div class="light-heading">English</div>
+                    <div class="tuter-details-time">11:30 am, 02/05/2016</div>
+                    <div class="tuter-details-price"><strong>Price:</strong> <span class="org-link">$25</span></div>
+                    <div class="text-center">
+                        <span class="tuter-details-dp"><img src="/images/profile-img2.jpg" alt="" /></span>
+                        <p>By: <span class="tuter-name">Jemini Moris</span></p>
+                    </div>
+                    <div class="tuter-stars text-center">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <br class="clear" />
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="tuter-details-box-hover">
+                        <button type="submit" class="btn btn-default">View More</button>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 tuter-details-box text-center">
+                    <div class="light-heading">Match</div>
+                    <div class="tuter-details-time">11:30 am, 02/05/2016</div>
+                    <div class="tuter-details-price"><strong>Price:</strong> <span class="org-link">$25</span></div>
+                    <div class="text-center">
+                        <span class="tuter-details-dp"><img src="/images/profile-img.jpg" alt="" /></span>
+                        <p>By: <span class="tuter-name">Jemini Moris</span></p>
+                    </div>
+                    <div class="tuter-stars text-center">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <br class="clear" />
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="tuter-details-box-hover">
+                        <button type="submit" class="btn btn-default">View More</button>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 tuter-details-box text-center">
+                    <div class="light-heading">Scince</div>
+                    <div class="tuter-details-time">11:30 am, 02/05/2016</div>
+                    <div class="tuter-details-price"><strong>Price:</strong> <span class="org-link">$25</span></div>
+                    <div class="text-center">
+                        <span class="tuter-details-dp"><img src="/images/tuter02-img-mid.jpg" alt="" /></span>
+                        <p>By: <span class="tuter-name">Jemini Moris</span></p>
+                    </div>
+                    <div class="tuter-stars text-center">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <br class="clear" />
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="tuter-details-box-hover">
+                        <button type="submit" class="btn btn-default">View More</button>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 tuter-details-box text-center first">
+                    <div class="light-heading">English</div>
+                    <div class="tuter-details-time">11:30 am, 02/05/2016</div>
+                    <div class="tuter-details-price"><strong>Price:</strong> <span class="org-link">$25</span></div>
+                    <div class="text-center">
+                        <span class="tuter-details-dp"><img src="/images/profile-img2.jpg" alt="" /></span>
+                        <p>By: <span class="tuter-name">Jemini Moris</span></p>
+                    </div>
+                    <div class="tuter-stars text-center">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <br class="clear" />
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="tuter-details-box-hover">
+                        <button type="submit" class="btn btn-default">View More</button>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 tuter-details-box text-center">
+                    <div class="light-heading">Match</div>
+                    <div class="tuter-details-time">11:30 am, 02/05/2016</div>
+                    <div class="tuter-details-price"><strong>Price:</strong> <span class="org-link">$25</span></div>
+                    <div class="text-center">
+                        <span class="tuter-details-dp"><img src="/images/profile-img.jpg" alt="" /></span>
+                        <p>By: <span class="tuter-name">Jemini Moris</span></p>
+                    </div>
+                    <div class="tuter-stars text-center">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <br class="clear" />
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="tuter-details-box-hover">
+                        <button type="submit" class="btn btn-default">View More</button>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 tuter-details-box text-center">
+                    <div class="light-heading">Scince</div>
+                    <div class="tuter-details-time">11:30 am, 02/05/2016</div>
+                    <div class="tuter-details-price"><strong>Price:</strong> <span class="org-link">$25</span></div>
+                    <div class="text-center">
+                        <span class="tuter-details-dp"><img src="/images/tuter02-img-mid.jpg" alt="" /></span>
+                        <p>By: <span class="tuter-name">Jemini Moris</span></p>
+                    </div>
+                    <div class="tuter-stars text-center">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <br class="clear" />
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="tuter-details-box-hover">
+                        <button type="submit" class="btn btn-default">View More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">&nbsp;</div>
+        </section>
+
+    </section>
+</section>
+<!-- registraion end  -->
+
+<%- include ./../layouts/footer.ejs %>

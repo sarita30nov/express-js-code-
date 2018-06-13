@@ -1,0 +1,120 @@
+<%- include ./../layouts/header.ejs %>
+    
+<!-- banner crousel start -->
+<section class="banner-short">
+    <h1>Login</h1>
+</section>
+<!-- banner crousel end -->
+
+<!-- Login start  -->
+<section class="Login">
+    <section class="container bg-gray">
+        <section class="registration-container">
+            <header class="text-center"><h4 class="main-heading-center">Login With Your Social Network Account</h4></header>
+            <section class="text-center">
+                <ul class="nav nav-tabs" id="login-myTab">
+                    <li class="col-sm-6 col-xs-12"><a data-target="#home" data-toggle="tab" class="btn-fb" aria-expanded="false"></a></li>
+                    <li class="col-sm-4 col-xs-12"><a data-target="#profile" data-toggle="tab" class="btn-google" aria-expanded="true"></a></li>
+                </ul>
+            </section>
+
+        </section>
+
+    </section>
+
+    <section class="clearfix">&nbsp;</section>
+    <section class="clearfix">&nbsp;</section>
+			
+		<% if(locals.message){ %>
+			<div class="alert alert-danger" style="text-align:center" role="alert">
+				<%=message.error%>
+			</div>
+		<% } %>
+			
+			
+			
+		<form method="post" action="/login"  method="post" >
+			<section class="container" id="login-form">
+				<section class="col-md-5 col-md-offset-4">
+					<header class="text-center"><h4 class="login-heading-sub">Login With Your Site Account</h4></header>
+					<ul class="col-xs-12 list-unstyled nopadding">
+
+						<li class="col-md-12 col-sm-12 col-xs-12">
+						<p class="form-white-box">
+							<input class="input-full" type="text" name="user_name" placeholder="User name or email id " required />
+						</p>
+						</li>
+						<li class="col-md-12 col-sm-12 col-xs-12"><p class="form-white-box">
+							<input class="input-full" type="password" name="password" placeholder="Password" required />
+						</p></li>
+
+						<br class="clear" />
+						<li class="col-md-12 col-sm-12 col-xs-12"><label><input type="checkbox" aria-invalid="true" name="remember" value="1"  class="user-error" aria-describedby="errorbox-3">Remember me</label> 
+						<a href="javascript:void(0)" class="org-link pull-right" data-toggle="modal" data-target="#ForgotModal">Forgot Password?</a> 
+						</li>
+						<li class="col-sm-12 col-xs-12 text-center"><input type="submit" value="LOGIN" name="login" class="org-btn" /></li>
+						<br class="clear" />
+						<li class="col-sm-12 col-xs-12 text-center">Not a member yet?  <a href="/register" class="org-link">Register now</a></li>
+					</ul>
+				</section>
+			</section>
+		</form>
+		
+</section>
+<!-- Login end  -->
+
+<!-- Modal -->
+<div class="modal fade" id="ForgotModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" ng-app='forgot'>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <form ng-submit="submit_form()" ng-controller="forgotController">
+				<section class="col-sm-8 col-md-offset-2">
+					<header class="text-center"><h4 class="login-heading-sub">Forgot Your Password?</h4></header>
+					<ul class="col-xs-12 list-unstyled nopadding">
+						<li class="col-md-12 col-sm-12 col-xs-12">Enter your email address below and we'll send you a link to reset your password.</li>
+						<li class="col-md-12 col-sm-12 col-xs-12"><p class="form-white-box"><input class="input-full" type="email" ng-model="Subdata.email" name="email" value="" placeholder="Please Enter your email"  required/></p>
+						<div class="subscribe_msg" style="padding-left:0px;">{{message}} </div>
+						</li>
+						<li class="col-sm-12 col-xs-12 text-center"><input type="submit" value="SUBMIT" class="org-btn" /></li>
+					</ul>
+				</section>
+			</form>	
+			
+            <div class="clear">&nbsp;</div>
+        </div>
+    </div>
+</div>
+
+<section class="clearfix">&nbsp;</section>
+<section class="clearfix">&nbsp;</section>
+<section class="clearfix">&nbsp;</section>
+
+<script>
+var app = angular.module('forgot', []);
+app.controller('forgotController', function ($scope, $http, $timeout) {
+	$scope.submit_form = function()
+	{
+		$http({
+				url: "/forgot_password",
+				method: "POST",
+				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+				data: $.param($scope.Subdata)
+			}).then(function (response){
+				if(response.data.status==false )
+				{
+					$scope.message = response.data.data;
+					$(".subscribe_msg").css('color','#AE7772');
+				}
+				else if(response.data.status==true )
+				{
+					$scope.message = response.data.data;
+					$(".subscribe_msg").css('color','green');
+				}
+				$scope.Subdata.email = '';
+				$timeout(function () { $scope.message = '';}, 8000);
+			});
+	}
+});
+</script>
+<%- include ./../layouts/footer.ejs %>

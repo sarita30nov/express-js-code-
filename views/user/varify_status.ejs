@@ -1,0 +1,18 @@
+<%- include ./../layouts/header.ejs %>
+<!-- banner crousel start -->
+<section class="banner-short">
+    <h1>Varification Status</h1>
+</section>
+<!-- banner crousel end -->
+<!-- registraion start  -->
+<section class="registration page_design">
+	<% if(type=='success'){ %>
+   You account has been sucessfully varified,  <a href="/login">Click Here </a> to login 
+ <% } else{ %>  
+   It seems that your account already varify or worng varification code 
+<% } %>
+     
+</section>
+<!-- registraion end  -->
+<section class="clearfix">&nbsp;</section>
+<%- include ./../layouts/footer.ejs %>

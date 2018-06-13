@@ -1,0 +1,100 @@
+<%- include ./../layouts/header.ejs %>
+
+
+<!-- inner-submenu-container start -->
+<section class="inner-submenu-full-container hidden-xs">
+    <section class="container">
+        <ul class="nav navbar-nav inner-submenu">
+            <li><a href="/teacher/session">Session</a></li>
+            <li><a href="javascript:void(0)">Calendar</a></li>
+            <li><a href="javascript:void(0)">My Orders</a></li>
+            <li><a href="javascript:void(0)">My Payments</a></li>
+            <li><a href="javascript:void(0)">My Watchlist</a></li>
+        </ul>
+    </section>
+</section>
+<!-- inner-submenu-container end -->
+<!-- registraion start  -->
+<section class="profile-container">
+    <section class="container">
+        <section class="col-md-3 col-sm-4">
+            <section class="profile-deails">
+                <div class="col-xs-12">
+                    <ul>
+                        <li class="text-right"><a href="javascript:void(0)" class="glyphicon glyphicon-pencil org-link"></a></li>
+                        <li class="text-center user-name"><strong><%= user.first_name %> <%= user.last_name %></strong></li>
+                        <li class="text-center">Delhi University</li>
+                        <li class="text-center"><div class="profile-img"><img src="/images/profile-img.jpg" alt="" /></div></li>
+                        <li class="org-link"><span class="glyphicon glyphicon-envelope pull-left"></span> <%= user.email %></li>
+                        <li><span class="glyphicon glyphicon-phone pull-left"></span> <%= user.contact_number %></li>
+                        <li><span class="glyphicon glyphicon-gift pull-left"></span> 23 yrs</li>
+                        <li><span class="glyphicon glyphicon-time pull-left"></span> UTC+02:00</li>
+                        <li><span class="glyphicon glyphicon-home pull-left"></span> <p><%= user.street %>, <%= user.city_name %>, <%= country.country_name %>, 2021</p></li>
+                    </ul>
+                    <div class="clear">&nbsp;</div>
+                </div>
+                <div class="clear">&nbsp;</div>
+            </section>
+        </section>
+        <section class="col-md-9 col-sm-8">
+            <header><h2 class="col-sm-12 main-heading-sub-plus">Teaching Subject</h2></header>
+            <div class="col-xs-12">
+            <table width="100%" class="educational-details-table">
+                <tr>
+                    <th width="10%">Degree</th>
+                    <th width="15%">University</th>
+                    <th width="40%">Major subject</th>
+                    <th width="10%">Grades</th>
+                    <th width="25%" colspan="2">Graduating year</th>
+                </tr>
+                <tr>
+                    <td><strong>Actuarial Science</strong></td>
+                    <td>University of Cape Town</td>
+                    <td>Models, Business Economics, Financial Mathematics</td>
+                    <td>First</td>
+                    <td width="10%">1981</td>
+                    <td class="text-center"><a href="javascript:void(0)" class="org-link">Upload Certificates</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Actuarial Science</strong></td>
+                    <td>University of Cape Town</td>
+                    <td>Models, Business Economics, Financial Mathematics</td>
+                    <td>First</td>
+                    <td>1981</td>
+                    <td class="text-center"><a href="javascript:void(0)" class="org-link">Upload Certificates</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Actuarial Science</strong></td>
+                    <td>University of Cape Town</td>
+                    <td>Models, Business Economics, Financial Mathematics</td>
+                    <td>First</td>
+                    <td>1981</td>
+                    <td class="text-center"><a href="javascript:void(0)" class="org-link">Upload Certificates</a></td>
+                </tr>
+            </table>
+            </div>
+            <div class="clear">&nbsp;</div>
+            <div class="col-md-5 col-sm-7 col-xs-12">
+                <header><h2 class="main-heading-sub-plussub">Teaching Subjects</h2></header>
+                <p>Actuarial Science, Financial Mathematics, Finance and Financial Reporting, Probability and Mathematical Statistics, Models Actuarial Science, Financial Mathematics</p>
+                <a href="javascript:void(0)" class="org-link">Add Subject</a>
+            </div>
+            <div class="col-md-4 col-sm-5 col-xs-12">
+                <header><h2 class="main-heading-sub-plussub">Demo Video</h2></header>
+                <div class="icon-video-player">&nbsp;</div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <header><h2 class="main-heading-sub-plussub">Time Availability</h2></header>
+                <p>Not available</p>
+                <a href="javascript:void(0)" class="org-link">Add New</a>
+            </div>
+            <div class="clear">&nbsp;</div>
+            <div class="hourly-rate">Hourly Rate<br /><strong>$25.00/hrs</strong></div>
+        </section>
+
+    </section>
+</section>
+<!-- registraion end  -->
+
+
+<%- include ./../layouts/footer.ejs %>

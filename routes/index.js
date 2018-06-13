@@ -1,0 +1,25 @@
+var express = require('express');
+var asysncss = require('express-async-await');
+//var router = express.Router();
+var router = asysncss(express.Router()) ;
+var index = require('../controllers/index');
+
+router.get('/', index.index);
+router.get('/login', index.login);
+router.post('/login', index.login_submit);
+router.post('/forgot_password', index.forgot_password);
+router.get('/about-us', index.about_us);
+router.get('/how-it-works', index.how_works);
+router.get('/contact-us', index.contact_us);
+router.get('/whiteboard', index.whiteboard);
+router.get('/help-support', index.help_support);
+router.get('/make-payment', index.make_payment);
+router.get('/exam-and-courses', index.exam_courses);
+router.get('/online-tutoring', index.online_tutoring);
+router.get('/test-preparation', index.test_preparation);
+router.get('/sitemap', index.sitemap);
+router.get('/faq', index.faq);
+router.get('/terms', index.terms);
+router.post('/subscribe', index.subscribe);
+router.get('/logout', index.logout);
+module.exports = router;
